@@ -290,13 +290,13 @@ public:
 	}
 };
 //-----------------------------------------------------------
-class Line{
+class Line3D{
 private:
 	Vector3 _p1;
 	Vector3 _p2;
 public:
-	Line(){}
-	Line(Vector3 p1, Vector3 p2){
+	Line3D(){}
+	Line3D(Vector3 p1, Vector3 p2){
 		_p1 = p1;
 		_p2 = p2;
 	}
@@ -305,10 +305,10 @@ public:
 	Vector3 P2(){ return _p2; }
 	Vector3 Dir(){ return _p2-_p1; }
 
-	static Vector3 Sample(Line line, double t){
+	static Vector3 Sample(Line3D line, double t){
 		return line.P1() + line.Dir()*t;
 	}
-	static double Distance(Line line, Vector3 p){
+	static double Distance(Line3D line, Vector3 p){
 		if (line.P1() == line.P2())
 			return -1;
 
